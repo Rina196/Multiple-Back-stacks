@@ -10,7 +10,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/backstackswithextension" />
+            <option value="$PROJECT_DIR$/withbackstacks" />
+            <option value="$PROJECT_DIR$/withoutbackstacks" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,2 +1,4 @@
 rootProject.name = "MultipleBackStack"
-include ':app'
+include ':withbackstacks'
+include ':withoutbackstacks'
+include ':backstackswithextension'
