@@ -25,6 +25,6 @@ class UserDetailsFragment : Fragment() {
         val userData = arguments?.getSerializable("data") as UserData
         tvName.text = userData.title
         tvEmail.text = userData.message
-
+        tvMobile.text = userData.mobile
     }
 }

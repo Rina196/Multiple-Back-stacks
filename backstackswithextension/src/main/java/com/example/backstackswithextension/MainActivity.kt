@@ -14,8 +14,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     private fun setUpBottomNav() {
-        val controller = bottomNav.setupWithNavController(
+        val controller = bottomNav.setupWithNavController1(
             listOf(R.navigation.main_feed, R.navigation.post),
             supportFragmentManager,
             R.id.fragNavHost,
@@ -30,4 +35,9 @@ class MainActivity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         setUpBottomNav()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
 }

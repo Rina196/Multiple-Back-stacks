@@ -3,35 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/post"
-    app:startDestination="@id/postFragment">
+    app:startDestination="@id/profileFragment">
 
     <fragment
-        android:id="@+id/postFragment"
-        android:name="com.example.multiplebackstack.post.PostFragment"
-        android:label="fragment_post"
-        tools:layout="@layout/fragment_post" >
+        android:id="@+id/profileFragment"
+        android:name="com.example.multiplebackstack.post.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
         <action
-            android:id="@+id/action_postFragment_to_fragment4"
-            app:destination="@id/fragment4" />
+            android:id="@+id/action_profileFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/zoom_exit"
+            app:popEnterAnim="@anim/zoom_enter"
+            app:popExitAnim="@anim/right_out"/>
+
     </fragment>
     <fragment
-        android:id="@+id/fragment4"
-        android:name="com.example.multiplebackstack.post.Fragment4"
-        android:label="Fragment4" >
+        android:id="@+id/settingFragment"
+        android:name="com.example.multiplebackstack.post.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting">
         <action
-            android:id="@+id/action_fragment4_to_fragment5"
-            app:destination="@id/fragment5" />
+            android:id="@+id/action_settingFragment_to_cmsFragment"
+            app:destination="@id/cmsFragment"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/zoom_exit"
+            app:popEnterAnim="@anim/zoom_enter"
+            app:popExitAnim="@anim/right_out"/>
     </fragment>
     <fragment
-        android:id="@+id/fragment5"
-        android:name="com.example.multiplebackstack.post.Fragment5"
-        android:label="Fragment5" >
-        <action
-            android:id="@+id/action_fragment5_to_fragment6"
-            app:destination="@id/fragment6" />
+        android:id="@+id/cmsFragment"
+        android:name="com.example.multiplebackstack.post.CmsFragment"
+        android:label="CmsFragment"
+        tools:layout="@layout/fragment_cms">
+        <argument
+            android:name="isFor"
+            android:defaultValue="''"
+            app:argType="string" />
     </fragment>
-    <fragment
-        android:id="@+id/fragment6"
-        android:name="com.example.multiplebackstack.post.Fragment6"
-        android:label="Fragment6" />
 </navigation>

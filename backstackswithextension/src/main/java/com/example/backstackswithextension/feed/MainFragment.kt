@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,10 +28,12 @@ class MainFragment : Fragment() {
         list.add(UserData().apply {
             title = "John dhow"
             message = "abc@gmail.com"
+            mobile = "1234567890"
         })
         list.add(UserData().apply {
             title = "Doll Throne"
             message = "def@gmail.com"
+            mobile = "097654321"
         })
         val adapter = UserAdapter(requireContext(), list, ::handleClick)
         rvList.adapter = adapter
@@ -45,7 +48,7 @@ class MainFragment : Fragment() {
     private fun handleClick(userData: UserData) {
         val bundle = Bundle()
         bundle.putSerializable("data", userData)
-        findNavController().navigate(R.id.action_mainFragment_to_userDetailsFragment, bundle)
+        findNavController().navigate(R.id.action_mainFragment_to_userDetailsFragment, bundle,null)
     }
 
 }

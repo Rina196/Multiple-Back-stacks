@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.backstackswithextension.R
-import kotlinx.android.synthetic.main.fragment_1.view.*
-
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class ProfileFragment : Fragment() {
 
@@ -22,8 +21,8 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.button.setOnClickListener {
-            findNavController().navigate(R.id.action_postFragment_to_profileDetailsFragment)
+        view.ivSetting.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_settingFragment)
         }
     }
 

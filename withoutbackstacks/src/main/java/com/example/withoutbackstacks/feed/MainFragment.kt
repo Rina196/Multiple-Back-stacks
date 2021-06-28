@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.withoutbackstacks.R
-import kotlinx.android.synthetic.main.fragment_1.view.*
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
 
@@ -21,9 +23,31 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.button.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_fragment1)
-        }
+        val list = ArrayList<UserData>()
+        list.add(UserData().apply {
+            title = "John dhow"
+            message = "abc@gmail.com"
+            mobile = "1234567890"
+        })
+        list.add(UserData().apply {
+            title = "Doll Throne"
+            message = "def@gmail.com"
+            mobile = "097654321"
+        })
+        val adapter = UserAdapter(requireContext(), list, ::handleClick)
+        rvList.adapter = adapter
+        rvList.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                LinearLayoutManager.VERTICAL
+            )
+        )
+    }
+
+    private fun handleClick(userData: UserData) {
+        val bundle = Bundle()
+        bundle.putSerializable("data", userData)
+        findNavController().navigate(R.id.action_mainFragment_to_userDetailsFragment, bundle, null)
     }
 
 }

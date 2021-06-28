@@ -6,35 +6,18 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/fragment1"
-        android:name="com.example.multiplebackstack.feed.Fragment1"
-        android:label="fragment_1"
-        tools:layout="@layout/fragment_1" >
-        <action
-            android:id="@+id/action_fragment1_to_fragment2"
-            app:destination="@id/fragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.example.multiplebackstack.feed.Fragment2"
-        android:label="fragment_2"
-        tools:layout="@layout/fragment_2" >
-        <action
-            android:id="@+id/action_fragment2_to_fragment3"
-            app:destination="@id/fragment3" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragment3"
-        android:name="com.example.multiplebackstack.feed.Fragment3"
-        android:label="fragment_3"
-        tools:layout="@layout/fragment_3" />
-    <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.multiplebackstack.feed.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_fragment1"
-            app:destination="@id/fragment1" />
+            android:id="@+id/action_mainFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        tools:layout="@layout/fragment_user_details"
+        android:name="com.example.multiplebackstack.feed.UserDetailsFragment"
+        android:label="UserDetailsFragment" >
     </fragment>
 </navigation>
